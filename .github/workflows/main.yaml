@@ -45,6 +45,9 @@ jobs:
         with:
           path: binaries/
 
+      - name: Verify downloaded files
+        run: ls -la binaries/
+
       - name: Create GitHub Release
         id: create_release
         uses: actions/create-release@v1
@@ -56,6 +59,16 @@ jobs:
           draft: false
           prerelease: false
 
+      - name: Upload linux binaries
+        uses: actions/upload-release-asset@v1
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+            upload_url: ${{ steps.create_release.outputs.upload_url }}
+            asset_path: binaries/conv_edt_tsv_junit-linux-amd64
+            asset_name: conv_edt_tsv_junit-linux-amd64
+            asset_content_type: application/octet-stream
+
       - name: Upload windows binaries
         uses: actions/upload-release-asset@v1
         env:
@@ -66,12 +79,4 @@ jobs:
           asset_name: conv_edt_tsv_junit-windows-amd64.exe
           asset_content_type: application/octet-stream
 
-      - name: Upload linux binaries
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: binaries/conv_edt_tsv_junit-linux-amd64
-          asset_name: conv_edt_tsv_junit-linux-amd64
-          asset_content_type: application/octet-stream
+
