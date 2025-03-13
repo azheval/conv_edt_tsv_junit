@@ -1,0 +1,21 @@
+{
+    "input_file_folder": "out",
+    "output_file_folder": "out",
+    "skip_errors_file": "vendor.vd",
+    "skip_categories": [
+        "Стандарты кодирования",
+        "Предупреждение",
+        "Стандарты разработки интерфейсов",
+        "Производительность",
+        "Безопасность"
+    ],
+    "skip_objects": [
+        ".Удалить"
+    ],
+    "skip_significance_categories": [
+        "Значительная_Переносимость"
+    ],
+    "skip_error_text": [
+        "Неподдерживаемый оператор [Web-клиент]"
+    ]
+}
