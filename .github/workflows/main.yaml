@@ -48,6 +48,11 @@ jobs:
       - name: Verify downloaded files
         run: ls -la binaries/
 
+      - name: Copy binaries
+        run: |
+          mv binaries/windows-binary/* binaries/
+          mv binaries/linux-binary/* binaries/
+
       - name: Create GitHub Release
         id: create_release
         uses: actions/create-release@v1
