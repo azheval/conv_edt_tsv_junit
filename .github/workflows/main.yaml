@@ -31,7 +31,7 @@ jobs:
           go build -o conv_edt_tsv_junit-${GOOS}-${GOARCH} ./cmd/conv_edt_tsv_junit.go
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.os }}-binary
           path: conv_edt_tsv_junit-${{ matrix.os }}-amd64
@@ -41,7 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           path: binaries/
 
