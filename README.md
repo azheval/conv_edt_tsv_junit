@@ -2,6 +2,10 @@
 
 Конвертер результатов проверки конфигурации вызовом EDT в junit xml.
 
+## Использование
+
+`./conv_edt_tsv_junit-windows-amd64.exe --settings_file=config.json`
+
 ## Настройка
 
 - 'input_file_folder': директория с результатами проверки
