@@ -1,5 +1,7 @@
 # Converter EDT tsv to junit xml
 
+![build](https://github.com/azheval/conv_edt_tsv_junit/actions/workflows/main.yaml/badge.svg)
+
 Конвертер результатов проверки конфигурации вызовом EDT в junit xml.
 
 ## Использование
